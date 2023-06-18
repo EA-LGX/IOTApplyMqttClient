@@ -318,7 +318,7 @@ void MainWindow::setBeepState(int on) {
 
 void MainWindow::setLEDState(int on) {
 #ifdef __arm__
-    QString strFile = "/sys/class/gpio/gpio132/value";
+    QString strFile = "/sys/class/leds/green/brightness";
     QFile file(strFile);
     if (!file.open(QIODevice::ReadWrite | QIODevice::Truncate)) {
         qDebug() << "/sys/class/leds/green/brightness export failed!";
